@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'steelfish';
+  src: url('fonts/steelfish rg.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:root {
+  --link_color: 66.72% 0.1179 262.16;
+  --hover_link_color: 54.15% 0.2284 262.16;
+  --smGap: 0.5em;
+  --mdGap: 4em;
+  --lgGap: 6em;
+}
+
+body { 
+  font-family: "Inter", sans-serif;
+}
+
+.smGap {
+  height: var(--smGap);
+}
+
+.mdGap {
+  height: var(--mdGap);
+}
+
+.lgGap {
+height: var(--lgGap);
+}
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+
+html {
+-moz-text-size-adjust: none;
+-webkit-text-size-adjust: none;
+text-size-adjust: none;
+}
+
+body, h1, h2, h3, h4, p, ul, ol, li,
+figure, blockquote, dl, dd {
+margin: 0;
+}
+
+ul, ol {
+list-style: none;
+}
+
+img, picture, video, svg {
+display: block;
+max-width: 100%;
+}
+
+input, textarea, select, button {
+font: inherit;
+}
+
+.container {
+  padding: 3% 6%;
+}
+
+body {
+  background-color: #fff;
+}
+
+/*.flex {
+  display: block;
+}
+
+.one, .two {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #666;
+  background-color: #ddd;
+}
+
+.one {
+  margin-right: 50px;
+  padding: 10px;
+}*/
+
+.aboutMe > h1 {
+  font-size: 18em;
+  font-family: 'steelfish', sans-serif;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  color: #333;
+  flex-basis: 50%;
+/*  text-transform: uppercase;*/
+}
+
+p, a, span {
+  font-size: 1.4rem;
+  max-width: 70%;
+  margin-bottom: 0.5rem;
+}
+
+.aboutMe {
+  display: flex;
+  gap: 4vw;
+  margin-bottom: 6em;
+}
+
+.aboutMeDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 50%;
+}
+
+.aboutMeTxt > p, .aboutMeTxt > a {
+  max-width: 100%;
+  font-size: 1rem;
+  margin-top: 5vw;
+  hyphens: auto;
+}
+
+
+.aboutMeImg {
+  height: 13vw;
+  width: 100%;
+  background-image: url(img/me.JPG);
+  margin-bottom: 0.6vw;
+  border-radius: 8px;
+  background-position: 0% 12%;
+  background-size: 110%;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: oklch(var(--link_color));
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.175em;
+  text-decoration-skip-ink: none;
+  text-decoration-color: oklch(var(--link_color) / 0.2);
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: oklch(var(--hover_link_color));
+  text-decoration-color: oklch(var(--hover_link_color) / 0.2);
+  transition: color 0s;
+}
+
+
+/*a:active {
+  color: #ff00ff;
+}*/
+
+.gallery {
+  position: relative;
+  padding: 4em 3.2em;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5em;
+  margin-bottom: 4em;
+  background-color: rgba(255, 10, 10, 0.4);
+  border-radius: 10px;
+}
+
+.gallery-item-gr1 {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
+}
+
+.gallery-item-gr2 {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
+}
+
+.gallery-item-gr3 {
+ position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
+}
+
+.gallery-item-gr4 {
+position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
+}
+
+
+.gallery-item {
+   border-radius: 0.5em;
+   overflow: hidden;
+}
+
+
+.gallery .gallery-item:nth-child(1) {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 3;
+}
+
+.gallery .gallery-item:nth-child(2) {
+    grid-column: 3 / span 3;
+    grid-row: 4 / span 2;
+}
+
+.gallery .gallery-item:nth-child(3) {
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 2;
+
+    background-image: url(img/sm.jpeg);
+    background-position: 0% 0%;
+    background-size: 110%;
+    background-repeat: no-repeat;
+
+}
+
+.gallery .gallery-item:nth-child(4) {
+    grid-column: 4 / span 2;
+    grid-row: 1 / span 3;
+
+    background-image: url(img/vert.jpg);
+    background-position: 0% 100%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+
+footer {
+  display: flex;
+  gap: var(--smGap);
+}
+
+footer > a, footer > p, footer > span {
+  flex-basis: auto;
+  margin-top: 0;
+}
+
+footer > span {
+  padding-top: 2px;
+}
