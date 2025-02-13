@@ -60,6 +60,11 @@ font: inherit;
 
 .container {
   padding: 3% 6%;
+
+  @media (max-width: 650px) {
+    padding: 3% 3%;
+  }
+
 }
 
 body {
@@ -83,25 +88,36 @@ body {
 }*/
 
 .aboutMe > h1 {
-  font-size: 18em;
   font-family: 'steelfish', sans-serif;
   line-height: 1em;
   letter-spacing: 0.05em;
   color: #333;
   flex-basis: 50%;
+
+  font-size: clamp(6em, calc(6rem + ((1vw - 0.225em) * 12.3077)), 18em);
+  min-height: 0vw;
 /*  text-transform: uppercase;*/
+
 }
 
 p, a, span {
-  font-size: 1.4rem;
   max-width: 70%;
   margin-bottom: 0.5rem;
+  font-size: 1em;
 }
 
 .aboutMe {
   display: flex;
   gap: 4vw;
   margin-bottom: 6em;
+
+  @media (max-width: 910px) {
+    display: block;
+  }
+
+    @media (max-width: 800px) {
+    margin-bottom: 4em;
+  }
 }
 
 .aboutMeDescription {
@@ -109,13 +125,29 @@ p, a, span {
   flex-direction: column;
   justify-content: space-between;
   flex-basis: 50%;
+
+  @media (max-width: 910px) {
+    flex-direction: row-reverse;
+    column-gap: var(--smGap);
+    margin-top: var(--mdGap);
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column; 
+  }
+
 }
 
 .aboutMeTxt > p, .aboutMeTxt > a {
   max-width: 100%;
-  font-size: 1rem;
+  font-size: clamp(0.8em, calc(0.8rem + ((1vw - 0.225em) * 0.4103)), 1.2em);
+  min-height: 0vw;
   margin-top: 5vw;
   hyphens: auto;
+
+  @media (max-width: 910px) {
+    margin-top: 0;
+  }
 }
 
 
@@ -128,6 +160,10 @@ p, a, span {
   background-position: 0% 12%;
   background-size: 110%;
   background-repeat: no-repeat;
+
+  @media (max-width: 650px) {
+    height: 250px;
+  }
 }
 
 a {
@@ -153,7 +189,7 @@ a:hover {
 
 .gallery {
   position: relative;
-  padding: 4em 3.2em;
+  padding: clamp(0.8em, calc(0.8rem + ((1vw - 0.225em) * 3.2821)), 4em) clamp(0.6em, calc(0.6rem + ((1vw - 0.225em) * 2.6667)), 3.2em);
   border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -161,12 +197,17 @@ a:hover {
   margin-bottom: 4em;
   background-color: rgba(255, 10, 10, 0.4);
   border-radius: 10px;
+
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .gallery-item-gr1 {
   position: absolute;
   top: 0;
-  height: 40px;
+  height: clamp(8px, calc(0.5rem + ((1vw - 3.6px) * 2.0513)), 40px);
   width: 100%;
   left: 0;
   right: 0;
@@ -176,7 +217,7 @@ a:hover {
 .gallery-item-gr2 {
   position: absolute;
   bottom: 0;
-  height: 40px;
+  height: clamp(8px, calc(0.5rem + ((1vw - 3.6px) * 2.0513)), 40px);
   width: 100%;
   left: 0;
   right: 0;
@@ -188,7 +229,7 @@ a:hover {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 40px;
+  width: clamp(8px, calc(0.5rem + ((1vw - 3.6px) * 2.0513)), 40px);
   background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
 }
 
@@ -197,7 +238,7 @@ position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 40px;
+  width: clamp(8px, calc(0.5rem + ((1vw - 3.6px) * 2.0513)), 40px);
   background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
 }
 
@@ -227,6 +268,14 @@ position: absolute;
     background-size: 110%;
     background-repeat: no-repeat;
 
+}
+
+.gallery .gallery-item:nth-child(3) > img, .gallery .gallery-item:nth-child(4) > img {
+  display: none;
+
+  @media (max-width: 650px) {
+    display: block;
+  }
 }
 
 .gallery .gallery-item:nth-child(4) {
